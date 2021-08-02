@@ -1,4 +1,4 @@
 # GlobalLogic
-line 2 - main and feature
+line 2 - feature
 
 
