@@ -3,6 +3,12 @@
 
 const double PI = 3.141592653589793;
 
+/*
+ * This function calculates the circumference
+ * 
+ * @param circle radius
+ * @return returns the circumference (returns -1 if incorrect parameters are passed to the function)
+ */
 double get_circumference(float r)
 {
     if(r > 0.0f){
@@ -13,6 +19,12 @@ double get_circumference(float r)
     }
 }
 
+/*
+ * This function calculates the area circle
+ * 
+ * @param circle radius
+ * @return returns the area circle (returns -1 if incorrect parameters are passed to the function)
+ */
 double get_area_circle(float r)
 {
     if(r > 0.0f){

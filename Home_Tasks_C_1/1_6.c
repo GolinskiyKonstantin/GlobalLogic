@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdint.h>
 
+
+/*
+ * This function for calculating factorial
+ * 
+ * @param factorial number
+ * @return returns the factorial (returns 0 if incorrect parameters are passed to the function)
+ */
 unsigned long long get_factorial(unsigned long long f)
 {
     if( f ){

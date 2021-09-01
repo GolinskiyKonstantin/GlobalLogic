@@ -1,14 +1,25 @@
 #include "my_arr.h"
 
+//variable that stores the current size of the array
 static unsigned int size_arr;
 
+/*
+ * This function adds a value to the end of the array
+ * 
+ * @param the address of the array and the value to be written (value of type int)
+ * @return returns the address of the new array to which the data was added
+ */
 int* ar_push(int* p_arr, int value){
+	// check the pointer to NULL
+	// if it is NULL then create an array
     if(p_arr == NULL){
         size_arr = 1;
         p_arr = (int*)malloc( sizeof(int) );
         p_arr[0] = value;
         return p_arr;
     }
+	// if the pointer is not NULL means we allocate
+	// new memory for 1 element more, copy the data from the transferred array there and add the transferred value to the end
     else{
         int* p_arr_new = (int*)malloc( (size_arr + 1) * sizeof(int) );
         if(p_arr_new == NULL) {
@@ -27,8 +38,14 @@ int* ar_push(int* p_arr, int value){
     }
 }
 
-
+/*
+ * This function prints all elements of the array
+ * 
+ * @param the address of the array
+ */
 void ar_print_all(const int* p_arr){
+	
+	// if array empty
     if(!size_arr){
        printf("%s \r\n", "array empty!!!"); 
     }
@@ -39,7 +56,12 @@ void ar_print_all(const int* p_arr){
     }
 }
 
-
+/*
+ * This function to find a value in an array
+ * 
+ * @param array address and value to find (integer value)
+ * @return returns -2 if the pointer is NULL, -1 if the specified value is not in the array or the index of the element that stores the desired value.
+ */
 int ar_find_first(const int* p_arr, int value){
     if(p_arr == NULL){
         return -2;
@@ -55,6 +77,12 @@ int ar_find_first(const int* p_arr, int value){
     
 }
 
+/*
+ * This function to remove the specified array element
+ * 
+ * @param array address and the index of the array to be deleted (integer value)
+ * @return returns the address of the new array with the element removed
+ */
 int* ar_remove(int* p_arr, int index){
     if( p_arr == NULL ){
         printf("%s \r\n", "Error pointer!!!" );

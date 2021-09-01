@@ -9,7 +9,15 @@ int main()
     do{
         printf("%s", "Enter num 1...500 \r\n");
         scanf("%d", &user_num);
-    }while( !((user_num > 0) && (user_num <= 500)) );
+        // checking for correct input value
+        while(getchar()!='\n');
+        if( !((user_num > 0) && (user_num <= 500))){
+           printf("%s", "You entered an incorrect value!!!\r\n"); 
+        }
+        else{
+            break;
+        }
+    }while(1);
     
     printf("%s", "============= \r\n");
     
