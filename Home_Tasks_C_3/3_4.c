@@ -55,6 +55,7 @@ int main()
     }
     
     free(new_arr);
-    
+    free(array);
+	
     return 0;
 }
