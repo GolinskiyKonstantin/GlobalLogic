@@ -40,6 +40,8 @@ int main()
     
     printf("%s \r\n", str );
     printf("%s \r\n", copy_string );
-
+	
+    free( copy_string );
+	
     return 0;
 }
