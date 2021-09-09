@@ -32,6 +32,16 @@ char* str_cpy(char* st){
         return NULL;
     }
 }
+
+uint8_t empty_copy_string(const char* str){
+    if(str == NULL){
+        printf("%s \r\n", "Empty copy string" );
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
 //===========================================================================================
 
 /*
@@ -40,6 +50,8 @@ char* str_cpy(char* st){
  * @param first parameter string source second parameter string copy third parameter expected result
 */
 void U_Test_string_equality(const char* str_origin, const char* str_copy, bool result){
+    if( empty_copy_string( str_copy ) == 0 ){ return; }
+    
     uint32_t len_str_origin = 0;
     uint32_t len_str_copy = 0;
     
@@ -64,6 +76,8 @@ void U_Test_string_equality(const char* str_origin, const char* str_copy, bool r
  * (1 - memory address is the same, 0 - different memory address)
 */
 void U_Test_compare_pointers(const char* str_origin, const char* str_copy, bool result){
+    if( empty_copy_string( str_copy ) == 0 ){ return; }
+    
     if( (str_origin != str_copy) && ( !result ) ){
         printf("%s \r\n", "Test \"U_Test_compare_pointers\" successfully completed !!!" );
     }
@@ -79,6 +93,8 @@ void U_Test_compare_pointers(const char* str_origin, const char* str_copy, bool 
  * @param first parameter string source second parameter string copy third parameter expected result
 */
 void U_Test_character_by_character_comparison(const char* str_origin, const char* str_copy, bool result){
+    if( empty_copy_string( str_copy ) == 0 ){ return; }
+    
     uint32_t counter = 0;
     while( str_copy[counter] != '\0'){
         counter++;
@@ -127,6 +143,7 @@ int main()
     U_Test_character_by_character_comparison( str, copy_string, true );
     U_Test_checking_for_empty_string( copy_string, false );
     
+    free(copy_string);
     
     return 0;
 }
