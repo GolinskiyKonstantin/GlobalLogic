@@ -612,11 +612,11 @@ ARM Macro Assembler    Page 10
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=freertos_created\startup_stm32f303xc.d -ofreertos_created\st
-artup_stm32f303xc.o -I..\Core\Inc -I.\RTE\_FreeRTOS_Created -ID:\KEIL\ARM\CMSIS
-\5.7.0\CMSIS\Core\Include -ID:\KEIL\Keil\STM32F3xx_DFP\2.2.0\Drivers\CMSIS\Devi
-ce\ST\STM32F3xx\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_
-VERSION SETA 533" --predefine="_RTE_ SETA 1" --predefine="STM32F303xC SETA 1" -
--predefine="_RTE_ SETA 1" --list=startup_stm32f303xc.lst startup_stm32f303xc.s
+artup_stm32f303xc.o -I.\RTE\_FreeRTOS_Created -ID:\KEIL\ARM\CMSIS\5.7.0\CMSIS\C
+ore\Include -ID:\KEIL\Keil\STM32F3xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F3x
+x\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 5
+33" --predefine="_RTE_ SETA 1" --predefine="STM32F303xC SETA 1" --predefine="_R
+TE_ SETA 1" --list=startup_stm32f303xc.lst startup_stm32f303xc.s
 
 
 

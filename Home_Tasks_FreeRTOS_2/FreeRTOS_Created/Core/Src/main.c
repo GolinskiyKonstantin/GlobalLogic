@@ -19,13 +19,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 //====================================================================================================
 
+#include "FreeRTOS.h"
 #include "task.h"
 
 // ENTER TIM8 FOR FreeRTOS !!!!!! CubeMX -> SYS
@@ -55,7 +55,6 @@ SPI_HandleTypeDef hspi1;
 
 PCD_HandleTypeDef hpcd_USB_FS;
 
-osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -66,8 +65,6 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USB_PCD_Init(void);
-void StartDefaultTask(void const * argument);
-
 /* USER CODE BEGIN PFP */
 
 //====================================================================================================
@@ -124,35 +121,6 @@ int main(void)
 
   /* USER CODE END 2 */
 
-  /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
-
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
-
-  /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
-
-  /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  //osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  //defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  /* USER CODE END RTOS_THREADS */
-
-  /* Start scheduler */
-  //osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   
@@ -169,7 +137,7 @@ int main(void)
                     NULL,    /* Parameter passed into the task. */
                     tskIDLE_PRIORITY,/* Priority at which the task is created. */
                     NULL );      /* Used to pass out the created task's handle. */
-
+	
     /*========= Create the task, storing the handle. =================*/
     xReturned_TWO = xTaskCreate(
                     vTaskCode_TWO,       /* Function that implements the task. */
@@ -419,7 +387,7 @@ void vTaskCode_ONE( void * pvParameters )
     for( ;; )
     {
         HAL_GPIO_TogglePin( LD4_GPIO_Port, LD4_Pin );
-		vTaskDelay( 1000 / portTICK_PERIOD_MS );
+		vTaskDelay( 2000 / portTICK_PERIOD_MS );
     }
 	
 	//vTaskDelete( NULL );
@@ -431,7 +399,7 @@ void vTaskCode_TWO( void * pvParameters )
     for( ;; )
     {
         HAL_GPIO_TogglePin( LD6_GPIO_Port, LD6_Pin );
-		vTaskDelay( 300 / portTICK_PERIOD_MS );
+		vTaskDelay( 100 / portTICK_PERIOD_MS );
     }
 	
 	//vTaskDelete( NULL );
@@ -441,24 +409,6 @@ void vTaskCode_TWO( void * pvParameters )
 
 
 /* USER CODE END 4 */
-
-/* USER CODE BEGIN Header_StartDefaultTask */
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
-{
-  /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END 5 */
-}
 
  /**
   * @brief  Period elapsed callback in non blocking mode

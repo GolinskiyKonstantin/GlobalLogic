@@ -1,0 +1,13 @@
+freertos_created\heap_1.o: ..\FreeRTOS\heap_1.c
+freertos_created\heap_1.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_created\heap_1.o: ../FreeRTOS/include/FreeRTOS.h
+freertos_created\heap_1.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_created\heap_1.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_created\heap_1.o: ../FreeRTOS/include/FreeRTOSConfig.h
+freertos_created\heap_1.o: ../FreeRTOS/include/projdefs.h
+freertos_created\heap_1.o: ../FreeRTOS/include/portable.h
+freertos_created\heap_1.o: ../FreeRTOS/include/deprecated_definitions.h
+freertos_created\heap_1.o: ../FreeRTOS/include/portmacro.h
+freertos_created\heap_1.o: ../FreeRTOS/include/mpu_wrappers.h
+freertos_created\heap_1.o: ../FreeRTOS/include/task.h
+freertos_created\heap_1.o: ../FreeRTOS/include/list.h
