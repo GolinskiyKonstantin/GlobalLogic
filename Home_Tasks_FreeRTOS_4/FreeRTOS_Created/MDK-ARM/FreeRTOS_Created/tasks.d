@@ -1,0 +1,16 @@
+freertos_created\tasks.o: ..\FreeRTOS\tasks.c
+freertos_created\tasks.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_created\tasks.o: D:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+freertos_created\tasks.o: ../FreeRTOS/include/FreeRTOS.h
+freertos_created\tasks.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_created\tasks.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_created\tasks.o: ../FreeRTOS/include/FreeRTOSConfig.h
+freertos_created\tasks.o: ../FreeRTOS/include/projdefs.h
+freertos_created\tasks.o: ../FreeRTOS/include/portable.h
+freertos_created\tasks.o: ../FreeRTOS/include/deprecated_definitions.h
+freertos_created\tasks.o: ../FreeRTOS/RVDS/ARM_CM4F/portmacro.h
+freertos_created\tasks.o: ../FreeRTOS/include/mpu_wrappers.h
+freertos_created\tasks.o: ../FreeRTOS/include/task.h
+freertos_created\tasks.o: ../FreeRTOS/include/list.h
+freertos_created\tasks.o: ../FreeRTOS/include/timers.h
+freertos_created\tasks.o: ../FreeRTOS/include/stack_macros.h
