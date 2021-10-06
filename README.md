@@ -13,4 +13,4 @@
 ![](https://github.com/GolinskiyKonstantin/GlobalLogic/blob/FreeRTOS/Home_Tasks_FreeRTOS_4/Home_Tasks_FreeRTOS_4.png)
 
  ## Home_Tasks_FreeRTOS_5:
-![](https://github.com/GolinskiyKonstantin/GlobalLogic/blob/FreeRTOS/Home_Tasks_FreeRTOS_5/Home_Tasks_FreeRTOS_5.png)
+![](https://github.com/GolinskiyKonstantin/GlobalLogic/blob/FreeRTOS/Home_Tasks_FreeRTOS_5/Home_Tasks_FreeRTOS_5.jpg)
